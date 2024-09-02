@@ -45,21 +45,8 @@ project ( "GLFW" )
             "_CRT_SECURE_NO_WARNINGS"
         } )
 
-    filter ( "configurations:Debug" )
-        runtime ( "Debug" )
-        symbols ( "On" )
-
     filter ( { "system:windows", "configurations:Debug-AS" } )
         runtime ( "Debug" )
         symbols ( "On" )
         sanitize ( { "Address" } )
         flags ( { "NoRuntimeChecks", "NoIncrementalLink" } )
-
-    filter ( "configurations:Development" )
-        runtime ( "Release" )
-        optimize ( "Speed" )
-
-    filter ( "configurations:Shipping" )
-        runtime ( "Release" )
-        optimize ( "Speed" )
-        symbols ( "Off" )
