@@ -46,7 +46,5 @@ project ( "GLFW" )
         } )
 
     filter ( { "system:windows", "configurations:Debug-AS" } )
-        runtime ( "Debug" )
-        symbols ( "On" )
         sanitize ( { "Address" } )
         flags ( { "NoRuntimeChecks", "NoIncrementalLink" } )
